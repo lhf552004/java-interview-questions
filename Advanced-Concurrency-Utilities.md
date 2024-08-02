@@ -13,7 +13,7 @@ Key Classes
 
 Example
 
-java
+```
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -29,6 +29,7 @@ public class ExecutorExample {
         executor.shutdown();
     }
 }
+```
 
 2. ForkJoinPool
 
@@ -41,7 +42,7 @@ Key Concepts
 
 Example
 
-java
+```
 
 import java.util.concurrent.RecursiveTask;
 import java.util.concurrent.ForkJoinPool;
@@ -67,13 +68,13 @@ public class Fibonacci extends RecursiveTask<Integer> {
         System.out.println(pool.invoke(new Fibonacci(10)));
     }
 }
-
+```
 3. Future
 
 Future represents the result of an asynchronous computation. Methods are provided to check if the computation is complete, to wait for its completion, and to retrieve the result.
 Example
 
-java
+```
 
 import java.util.concurrent.*;
 
@@ -89,7 +90,7 @@ public class FutureExample {
         executor.shutdown();
     }
 }
-
+```
 4. CompletableFuture
 
 CompletableFuture is an extension of Future that allows for explicitly setting its value and chaining multiple asynchronous computations.
@@ -100,7 +101,7 @@ Key Features
 
 Example
 
-java
+```
 
 import java.util.concurrent.CompletableFuture;
 
@@ -115,13 +116,13 @@ public class CompletableFutureExample {
         });
     }
 }
-
+```
 5. RecursiveTask
 
 RecursiveTask is a subclass of ForkJoinTask used for tasks that return a result.
 Example
 
-java
+```
 
 import java.util.concurrent.RecursiveTask;
 import java.util.concurrent.ForkJoinPool;
@@ -163,7 +164,7 @@ public class SumTask extends RecursiveTask<Integer> {
         System.out.println(pool.invoke(task));
     }
 }
-
+```
 Conclusion
 
 Java’s high-level concurrency utilities provide powerful tools for managing parallel processing and asynchronous tasks. By using these utilities, developers can write more efficient and maintainable concurrent applications. Each utility serves specific purposes and choosing the right one depends on the nature of the task and the required level of parallelism.
