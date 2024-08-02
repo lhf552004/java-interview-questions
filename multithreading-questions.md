@@ -175,6 +175,24 @@ name: T2, isDaemon: true
 * notify()
 * notifyAll()
 
+The wait() Method
+
+    Purpose: Causes the current thread to wait until another thread invokes notify() or notifyAll() on the same object.
+    Usage: Typically called within a synchronized block or method to release the intrinsic lock on the object and wait.
+    Behavior: The thread releases the lock on the object and enters the waiting state. It will stay in this state until it is either notified or interrupted.
+
+The notify() Method
+
+    Purpose: Wakes up a single thread that is waiting on the object's monitor.
+    Usage: Must be called within a synchronized block or method.
+    Behavior: If multiple threads are waiting, one of them is chosen to be awakened. The choice of which thread to notify is non-deterministic and depends on the JVM implementation.
+
+The notifyAll() Method
+
+    Purpose: Wakes up all threads that are waiting on the object's monitor.
+    Usage: Must be called within a synchronized block or method.
+    Behavior: All waiting threads are moved from the waiting state to the blocked state, where they compete for the object's monitor lock.
+
 ```java
 class ThreadA {
 
